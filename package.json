@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "WEBPACK_ENV=dev webpack-dev-server --inline --colors --port 8088",
-    "dev-w":"set WEBPACK_ENV=dev && webpack-dev-server --inline --colors --port 8088",
+    "dev": "WEBPACK_ENV=dev webpack-dev-server --inline --colors --hot --port 8088",
+    "dev-w": "set WEBPACK_ENV=dev && webpack-dev-server --inline --hot --colors --port 8088",
+    "build": "rm -rf ./dist/* && webpack --inline --watch --hot --progress --colors",
     "prd": "WEBPACK_ENV=prd webpack -p"
   },
   "repository": {
@@ -29,6 +30,7 @@
     "webpack-dev-server": "^1.16.5"
   },
   "dependencies": {
+    "hogan": "^1.0.2",
     "jquery": "^3.2.1"
   }
 }

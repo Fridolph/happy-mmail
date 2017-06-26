@@ -8,9 +8,9 @@ var getHtmlConfig = function(name) {
   return {
     template: './src/view/' + name + '.html',
     filename: 'view/' + name + '.html',
-    inject: true,
-    hash: true,
-    chunks: ['common', name]
+    // inject: true,
+    // hash: true,
+    chunks: ['base', name]
   }
 }
 // 环境变量配置 dev / prd
@@ -41,13 +41,22 @@ var config = {
       {
         test: /\.(gif|png|jpg|jpeg|woff|svg|eot|ttf)\??.*$/,
         loader: 'url-loader?limit=10000&name=resource/[name].[ext]'        
-      }      
+      }
     ]
+  },
+  resolve: {
+    alias: {
+      util: __dirname + '/src/util',
+      page: __dirname + '/src/page',
+      image: __dirname + '/src/image',
+      view: __dirname + '/src/view',
+      service: __dirname + '/src/service'
+    }
   },
   plugins: [
     // 独立通用模块打包到 js/base.js
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'commons',
+      name: 'base',
       filename: 'js/base.js'      
     }),
     // 把css单独打包到文件里

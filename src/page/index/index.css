@@ -1,6 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  /*background: url('../../image/cropped-me.jpg');*/
   background: pink;
+  /*background: url('../../image/cropped-me.jpg');*/
 }
 .title {  background: pink; }
 

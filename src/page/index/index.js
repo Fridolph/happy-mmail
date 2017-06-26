@@ -1,10 +1,24 @@
 'use strict';
 
-require('../module');
 require('./index.css')
+var _mm = require('util/mm')
 
-var $ = require('jquery');
 
-console.log('hello webpack!');
+_mm.request({
+  url: '/product/list.do?keyword=1',
+  success: function(res) {
+    console.log(res);
+  },
+  error: function(msg) {
+    console.log(msg);
+  }
+})
 
-$('body').html('<h1 class="title">Hello Webpack!</h1>');
+console.log('getUrlParam: ', _mm.getUrlParam('test'));
+
+var html = '<div>{{title}}</div>';
+var data = {
+  title: 'hello webpack...'
+}
+
+console.log(_mm.renderHtml(html, data));
