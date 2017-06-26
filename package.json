@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "WEBPACK_ENV=dev webpack-dev-server --inline --colors --port 8088",
+    "dev-w":"set WEBPACK_ENV=dev && webpack-dev-server --inline --colors --port 8088",
+    "prd": "WEBPACK_ENV=prd webpack -p"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,18 @@
   "bugs": {
     "url": "https://github.com/Fridolph/happy-mmail/issues"
   },
-  "homepage": "https://github.com/Fridolph/happy-mmail#readme"
+  "homepage": "https://github.com/Fridolph/happy-mmail#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.29.0",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^1.15.0",
+    "webpack-dev-server": "^1.16.5"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
 }
