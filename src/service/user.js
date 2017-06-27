@@ -2,13 +2,12 @@
  * @Author: fridolph 
  * @Date: 2017-06-27 14:02:43 
  * @Last Modified by: fridolph
- * @Last Modified time: 2017-06-27 14:14:11
+ * @Last Modified time: 2017-06-27 14:22:38
  */
 
 var _mm = require('util/mm.js')
 
-var _user = {
-  
+var _user = { 
 
   /**
    * 检查登录状态

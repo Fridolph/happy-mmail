@@ -2,7 +2,7 @@
  * @Author: fridolph 
  * @Date: 2017-06-27 11:17:02 
  * @Last Modified by: fridolph
- * @Last Modified time: 2017-06-27 11:44:35
+ * @Last Modified time: 2017-06-27 15:50:07
  */
 .nav-simple {
   height: 60px;
@@ -14,4 +14,5 @@
   font-size: 26px;
   font-weight: bold;
   color: #c60023;
+  text-decoration: none;
 }

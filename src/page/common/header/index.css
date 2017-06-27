@@ -1,0 +1,32 @@
+/*
+ * @Author: fridolph 
+ * @Date: 2017-06-27 14:41:04 
+ * @Last Modified by: fridolph
+ * @Last Modified time: 2017-06-27 14:53:21
+ */
+.header .logo {
+  position: absolute;
+  font-size: 36px;
+  color: #c60023;
+  text-decoration: none;
+  left: 60px;
+  top: 34px;
+  font-weight: bold;
+}
+.header .search-con {
+  padding: 40px 0 30px 250px;
+}
+.header .search-con .search-input {
+  width: 550px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  font-size: 15px;
+  border: 2px solid #c60023;
+  outline: none;
+}
+.header .search-con .search-btn {
+  position: absolute;
+  height: 44px;
+  width: 80px;
+}

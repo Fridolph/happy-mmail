@@ -1,0 +1,25 @@
+/*
+ * @Author: fridolph 
+ * @Date: 2017-06-27 15:10:20 
+ * @Last Modified by: fridolph
+ * @Last Modified time: 2017-06-27 15:40:19
+ */
+.content.with-nav {
+  float: left;
+  width: 950px;
+  min-height: 100px;
+}
+.nav-side {
+  float: left;
+  width: 130px;
+}
+.nav-side .nav-item {
+  line-height: 25px;
+  font-size: 13px;
+}
+.nav-side .nav-item.active .link {
+  color: #c60023;
+}
+.nav-side .nav-item .link {
+  color: #777;
+}

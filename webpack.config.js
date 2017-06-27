@@ -4,10 +4,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 /**
  * 获取html-webpack-plugin参数的方法
  */
-var getHtmlConfig = function(name) {
+var getHtmlConfig = function(name, title) {
   return {
     template: './src/view/' + name + '.html',
     filename: 'view/' + name + '.html',
+    title: title,
     inject: true,
     hash: true,
     chunks: ['common', name]
@@ -22,7 +23,8 @@ var config = {
   entry: {
     'common': ['./src/page/common/index.js'],
     'index': ['./src/page/index/index.js'],
-    'login': ['./src/page/login/index.js']
+    'login': ['./src/page/login/index.js'],
+    'result': ['./src/page/result/index.js']
   },
   output: {
     path: './dist', // 生成文件的目录
@@ -41,8 +43,9 @@ var config = {
     // 把css单独打包到文件里
     new ExtractTextPlugin('css/[name].css'),
     // html模版的处理
-    new HtmlWebpackPlugin(getHtmlConfig('index')),
-    new HtmlWebpackPlugin(getHtmlConfig('login'))
+    new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+    new HtmlWebpackPlugin(getHtmlConfig('login', '用户登录')),
+    new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
   ],
   module: {
     loaders: [
@@ -54,9 +57,17 @@ var config = {
         test: /\.less$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
       },
+      {
+        test: /\.(string)$/,
+        loader: 'html-loader'
+      },
       { 
-        test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, 
+        test: /\.(gif|png|jpg|svg)\??.*$/, 
         loader:'url-loader?limit=8192&name=img/[name].[ext]'
+      },
+      { 
+        test: /\.(woff|eot|ttf)\??.*$/, 
+        loader:'url-loader?limit=8192&name=fonts/[name].[ext]'
       }
     ]
   },
