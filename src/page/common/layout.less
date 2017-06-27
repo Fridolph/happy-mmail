@@ -1,0 +1,46 @@
+/*
+ * @Author: fridolph
+ * @Date: 2017-06-26 19:46:02
+ * @Last Modified by: fridolph
+ * @Last Modified time: 2017-06-27 11:05:31
+ */
+
+
+/* css reset */ 
+* { margin: 0; padding: 0; }
+body { background: #f6f6f6; font: 14px/1.5 tahoma, arial, Microsoft Yahei, sans-serif; }
+li{ list-style: none; }
+img { display: block; border:none; }
+label { cursor: pointer; }
+input[type="checkbox"] { cursor: pointer; }
+
+/* 定宽布局 */
+.w {
+  width: 1080px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 全局通用样式 */
+// 隐藏类
+.hide {display: none;}
+// 超链接样式
+.link {
+  color:#999;cursor:pointer;text-decoration: none;
+  &:hover{color:#e80012;}
+  &-text{color:#999;text-decoration:none;}
+}
+// 按钮类
+.btn {
+  display:inline-block;padding:0 20px;height:40px;line-height:40px;vertical-align:middle;border:none;background:#c60023;font-size:17px;font-weight:bold;color:#fff;outline:none;cursor:pointer;text-decoration:none;
+  &-mini{
+    height:25px;line-height:25px;font-size:12px;padding: 0 10px;
+  }
+}
+
+// loading
+.loading{
+  display: block;margin:10px auto;width:65px;height:65px;border:1px solid #ddd;border-radius:5px;opacity:0.6;
+  background:url('../../image/icon/loading.gif') no-repeat;background-size:100%;
+}

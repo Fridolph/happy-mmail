@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-<%= require('html-loader!./layout/html-head.html') %>
+<head>
+  <%= require('html-loader!./layout/head-common.html') %>
+  <title>happymmall电商平台</title>
+</head>
 <body>
-  <div>
-    Hello webpack-dev-server
-  </div>
-  <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <%= require('html-loader!./layout/nav.html') %>
+  
+  <%= require('html-loader!./layout/footer.html') %>
 </body>
 </html>

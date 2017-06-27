@@ -8,9 +8,9 @@ var getHtmlConfig = function(name) {
   return {
     template: './src/view/' + name + '.html',
     filename: 'view/' + name + '.html',
-    // inject: true,
-    // hash: true,
-    chunks: ['base', name]
+    inject: true,
+    hash: true,
+    chunks: ['common', name]
   }
 }
 // 环境变量配置 dev / prd
@@ -26,12 +26,24 @@ var config = {
   },
   output: {
     path: './dist', // 生成文件的目录
-    filename: 'js/[name].js',
-    publicPath: '/dist' // view下引用路径的目录
+    filename: WEBPACK_ENV === 'dev' ? 'js/[name].js' : 'js/[name][chunkhash:8].js',
+    publicPath  : WEBPACK_ENV === 'dev' ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
   },
   externals: {
     'jquery': 'window.jQuery'
   },
+  plugins: [
+    // 独立通用模块打包到 js/base.js
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+      filename: 'js/base.js'      
+    }),
+    // 把css单独打包到文件里
+    new ExtractTextPlugin('css/[name].css'),
+    // html模版的处理
+    new HtmlWebpackPlugin(getHtmlConfig('index')),
+    new HtmlWebpackPlugin(getHtmlConfig('login'))
+  ],
   module: {
     loaders: [
       {
@@ -39,8 +51,12 @@ var config = {
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       },
       {
-        test: /\.(gif|png|jpg|jpeg|woff|svg|eot|ttf)\??.*$/,
-        loader: 'url-loader?limit=10000&name=resource/[name].[ext]'        
+        test: /\.less$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+      },
+      { 
+        test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, 
+        loader:'url-loader?limit=8192&name=img/[name].[ext]'
       }
     ]
   },
@@ -50,25 +66,14 @@ var config = {
       page: __dirname + '/src/page',
       image: __dirname + '/src/image',
       view: __dirname + '/src/view',
-      service: __dirname + '/src/service'
+      service: __dirname + '/src/service',
+      node_modules: __dirname + '/node_modules'
     }
-  },
-  plugins: [
-    // 独立通用模块打包到 js/base.js
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'base',
-      filename: 'js/base.js'      
-    }),
-    // 把css单独打包到文件里
-    new ExtractTextPlugin('css/[name].css'),
-    // html模版的处理
-    new HtmlWebpackPlugin(getHtmlConfig('index')),
-    new HtmlWebpackPlugin(getHtmlConfig('login'))
-  ]
+  }  
 }
 
-if ('dev' === WEBPACK_ENV) {
-  config.entry.common.push('webpack-dev-server/client?http://localhost:8088/')
+if('dev' === WEBPACK_ENV){
+  config.entry.common.push('webpack-dev-server/client?http://localhost:8088/');
 }
 
 module.exports = config;
