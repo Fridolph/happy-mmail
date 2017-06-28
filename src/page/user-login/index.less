@@ -1,0 +1,91 @@
+/*
+ * @Author: fridolph 
+ * @Date: 2017-06-27 17:04:34 
+ * @Last Modified by: fridolph
+ * @Last Modified time: 2017-06-28 10:24:25
+ */
+
+// 最外层容器
+.page-wrap {
+  background: #e72955;
+  padding: 40px 0;  
+}
+
+// 表单框
+.user-con{
+  width: 400px;
+  background: #fff;
+  position:relative;
+  margin: 0 auto;
+  .user-title{
+    text-align:center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    font-weight: bold;
+    color:#666;
+  }
+  .user-box{
+    padding: 20px;
+    // 错误提示框
+    .error-item{
+      position:relative;
+      padding: 4px 0 4px 40px;
+      margin-bottom: 10px;
+      border: red;
+      color: red;
+      background: #fde9e9;
+      border: 1px solid red;
+      display: none;
+    }
+    // 错误图标
+    .error-icon{
+      position:absolute;
+      left: 14px;
+      top: 50%;
+      font-size: 14px;
+      margin-top: -7px;
+    }    
+  }
+  .user-item {
+    position: relative;
+    margin-bottom:20px;
+    .user-label {
+      position:absolute;
+      left:1px;bottom:1px;top:1px;
+      width: 40px;
+      line-height: 36px;
+      background:#f3f3f3;
+      font-size: 18px;
+      color:#d3d3d3;
+      text-align:center;
+      border-right:1px solid #dbdbdb;
+    }
+    .user-content {
+      padding: 10px 0 10px 50px;
+      width: 308px;
+      height: 18px;
+      line-height: 18px;
+      font-size: 15px;
+      border:1px solid #dbdbdb;
+    }    
+  }
+  .btn-submit{
+    text-align:center;
+    height: 34px;
+    line-height: 34px;
+    font-size: 15px;
+    width: calc(~'100% - 40px');
+    &:hover{
+      background:#c60023/0.9;
+    }
+  }
+  // 跳转链接
+  .link-item{
+    text-align:right;
+    margin-top:20px;
+    .link {
+      margin-left: 10px;color:#999;
+    }
+  }  
+}

@@ -1,0 +1,87 @@
+/*
+ * @Author: fridolph 
+ * @Date: 2017-06-27 17:04:34 
+ * @Last Modified by: fridolph
+ * @Last Modified time: 2017-06-28 10:24:25
+ */
+.page-wrap {
+  background: #e72955;
+  padding: 40px 0;
+}
+.user-con {
+  width: 400px;
+  background: #fff;
+  position: relative;
+  margin: 0 auto;
+}
+.user-con .user-title {
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+  font-weight: bold;
+  color: #666;
+}
+.user-con .user-box {
+  padding: 20px;
+}
+.user-con .user-box .error-item {
+  position: relative;
+  padding: 4px 0 4px 40px;
+  margin-bottom: 10px;
+  border: red;
+  color: red;
+  background: #fde9e9;
+  border: 1px solid red;
+  display: none;
+}
+.user-con .user-box .error-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  font-size: 14px;
+  margin-top: -7px;
+}
+.user-con .user-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+.user-con .user-item .user-label {
+  position: absolute;
+  left: 1px;
+  bottom: 1px;
+  top: 1px;
+  width: 40px;
+  line-height: 36px;
+  background: #f3f3f3;
+  font-size: 18px;
+  color: #d3d3d3;
+  text-align: center;
+  border-right: 1px solid #dbdbdb;
+}
+.user-con .user-item .user-content {
+  padding: 10px 0 10px 50px;
+  width: 308px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 15px;
+  border: 1px solid #dbdbdb;
+}
+.user-con .btn-submit {
+  text-align: center;
+  height: 34px;
+  line-height: 34px;
+  font-size: 15px;
+  width: calc(100% - 40px);
+}
+.user-con .btn-submit:hover {
+  background: #dc0027;
+}
+.user-con .link-item {
+  text-align: right;
+  margin-top: 20px;
+}
+.user-con .link-item .link {
+  margin-left: 10px;
+  color: #999;
+}
