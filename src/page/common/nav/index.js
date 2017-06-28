@@ -2,7 +2,7 @@
  * @Author: fridolph 
  * @Date: 2017-06-27 13:45:12 
  * @Last Modified by: fridolph
- * @Last Modified time: 2017-06-27 14:18:44
+ * @Last Modified time: 2017-06-28 11:18:06
  */
 
 'use strict';
@@ -39,7 +39,7 @@ var nav = {
 
     // 注册点击事件
     $('.js-register').on('click', function() {
-      window.location.href = './register.html';
+      window.location.href = './user-register.html';
     });
 
     // 退出点击事件

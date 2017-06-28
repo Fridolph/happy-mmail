@@ -2,7 +2,7 @@
  * @Author: fridolph 
  * @Date: 2017-06-26 17:35:13 
  * @Last Modified by: fridolph
- * @Last Modified time: 2017-06-26 19:37:11
+ * @Last Modified time: 2017-06-27 17:01:20
  */
 'use strict';
 
@@ -114,7 +114,7 @@ var _mm = {
    * 统一登录处理
    */
   doLogin: function() {
-    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+    window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
   },
 
   /**
