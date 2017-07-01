@@ -7,6 +7,7 @@
     "dev": "WEBPACK_ENV=dev webpack-dev-server --inline --port 8088",
     "dev-w": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
     "build": "rm -rf ./dist/* && webpack --inline --watch --hot --progress --colors",
+    "build-w": "rm -rf ./dist/* webpack --inline --watch --hot --progress --colors",
     "prd": "WEBPACK_ENV=prd webpack -p"
   },
   "repository": {
