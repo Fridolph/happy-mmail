@@ -2,7 +2,7 @@
  * @Author: fridolph 
  * @Date: 2017-06-27 14:41:04 
  * @Last Modified by: fridolph
- * @Last Modified time: 2017-06-27 14:53:21
+ * @Last Modified time: 2017-07-10 10:15:26
  */
 .header .logo {
   position: absolute;
@@ -29,4 +29,14 @@
   position: absolute;
   height: 44px;
   width: 80px;
+}
+/* 面包屑导航 */
+.crumb {
+  margin-bottom: 16px;
+  border-top: 1px solid #c60023;
+  height: 50px;
+  line-height: 50px;
+  background: #eee;
+  color: #888;
+  font-size: 14px;
 }
